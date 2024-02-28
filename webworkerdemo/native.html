@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	native
+	<button id="send-msg">向web worker发送消息</button>
+	<script type="text/javascript">
+		const jscore = new Worker('./core.js');
+		const button = document.getElementById('send-msg');
+
+		button.onclick = function() {
+			jscore.postMessage('我是来自native的消息');
+		}
+		jscore.addEventListener('message', (e) => {
+			console.log('native接收到消息:', e.data);
+		});
+	</script>
+</body>
+</html>

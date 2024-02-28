@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	iframe
+	<button id="button">向native发送消息</button>
+	<script type="text/javascript">
+		const button = document.getElementById('button');
+
+		button.onclick = function() {
+			window.JSBridge.onReceiveWebviewMessage('我是来自webview的消息');
+		}
+		window.JSBridge.onReceiveNativeMessage = function(msg) {
+			console.log('webview收到消息:', msg);
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"file":"css/index.css","mappings":";;;AAAA;EACC,cAAc","sources":["webpack://components/./src/view/style.scss"],"sourcesContent":[".ui-view {\n\tdisplay: block;\n}"],"names":[],"sourceRoot":""}
